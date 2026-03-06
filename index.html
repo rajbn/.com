@@ -153,23 +153,13 @@
     <div class="container">
         <div class="section-title"><h2>New Connection Request</h2></div>
         <div class="form">
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        
-        <input type="text" name="Full Name" placeholder="Your Full Name" required>
-        
-        <input type="text" name="Phone Number" placeholder="Phone Number" required>
-        
-        <input type="text" name="Address" placeholder="Full Address" required>
-        
-        <button type="submit">Submit Request</button>
-        
-    </form>
-</div>
+            <input type="text" id="custName" placeholder="Your Full Name" required>
+            <input type="text" id="custPhone" placeholder="Phone Number" required>
+            <input type="text" id="custAddress" placeholder="Full Address" required>
+            <button type="button" onclick="sendToWhatsApp()">Submit Request</button>
+        </div>
     </div>
 </section>
-            </div>
-        </div>
-    </section>
 
     <section id="coverage" class="coverage">
         <div class="container">
