@@ -3,6 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RAJ NETWORK - Broadband Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background: #f5f7fb; color: #334155; line-height: 1.6; overflow-x: hidden; }
+        .container { width: 90%; max-width: 1200px; margin: auto; }
+        :root { --primary: #0a4da2; --accent: #00d2ff; }
+
+        /* Header */
+        header { background: #fff; box-shadow: 0 4px 15px rgba(0, 0, 0, .08); position: sticky; top: 0; z-index: 1000; }
+        header .container { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
+        
+        .logo-box { display: flex; align-items: center; text-decoration: none; gap: 10px; }
+        .logo-box img { height: 50px; width: auto; object-fit: contain; }
+        .brand-name { font-size: 20px; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+
+        nav a { margin-left: 20px; text-decoration: none; font-weight: 600; color: #475569; transition: 0.3s; font-size: 14px; }
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(rgba(10, 77, 162, 0.85), rgba(15, 23, 42, 0.9)),
+                        url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070") center/cover;
+            background-attachment: scroll; /* Mobile smooth scrolling improvement */
+        }
+
+        .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.4); line-height: 1.2; }
+        .hero p { font-size: 16px; margin-bottom: 30px; opacity: 0.9; }
+        .btn { background: var(--accent); color: #0f172a; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; font-size: 15px; }
+
+        /* Sections */
+        section { padding: 60px 0; }
+        .section-title { text-align: center; margin-bottom: 40px; padding: 0 10px; }
+        .section-title h2 { font-size: 28px; color: #1e293b; position: relative; display: inline-block; }
+        .section-title h2::after { content: ''; width: 50px; height: 3px; background: var(--accent); position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); }
+
+        /* Packages Grid */
+        .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 30px 20px; border-radius: 20px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,.04); border: 1px solid #edf2f7; }
+        .speed { font-size: 30px; font-weight: 800; color: var(--primary); margin: 10px 0; }
+        .price { font-size: 18px; color: #64748b; margin-bottom: 20px; font-weight: 600; }
+        .order { display: block; background: var(--primary); color: #fff; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: 700; }
+
+        /* Map styling */
+        .map-container { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 3px solid #fff; margin-top: 20px; height: 300px; }
+        iframe { width: 100%; height: 100%; }
+
+        /* Footer */
+        footer { background: #0f172a; color: #cbd5e1; text-align: center; padding: 40px 20px; font-size: 14px; }
+
+        /* Floating Buttons (Responsive Sizes) */
+        .float-btn { position: fixed; right: 15px; color: #fff; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; z-index: 1000; font-size: 13px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .whatsapp { bottom: 15px; background: #25D366; }
+        .call { bottom: 65px; background: #0a4da2; }
+        .speedtest { bottom: 115px; background: #ff6b00; }
+
+        /* --- Mobile Friendly Tweaks --- */
+        @media(max-width:768px){
+            header .container { flex-direction: column; gap: 10px; padding: 15px 0; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav a { margin-left: 0; padding: 5px 10px; background: #f1f5f9; border-radius: 5px; font-size: 12px;<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAJ NETWORK - Broadband Service</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
