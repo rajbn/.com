@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAJ BROADBAND NETWORK</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
@@ -15,278 +15,59 @@
 
         /* Header */
         header { background: #fff; box-shadow: 0 4px 15px rgba(0, 0, 0, .08); position: sticky; top: 0; z-index: 1000; }
-        header .container { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
-        
+        header .container { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
         .logo-box { display: flex; align-items: center; text-decoration: none; gap: 10px; }
-        .logo-box img { height: 65px; width: auto; object-fit: contain; }
-        .brand-name { font-size: 24px; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+        .logo-box img { height: 60px; width: auto; }
+        .brand-name { font-size: 24px; font-weight: 800; color: var(--primary); }
+        nav a { margin-left: 20px; text-decoration: none; font-weight: 600; color: #475569; font-size: 14px; }
 
-        nav a { margin-left: 25px; text-decoration: none; font-weight: 600; color: #475569; transition: 0.3s; }
-        nav a:hover { color: var(--primary); }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
-            padding: 160px 20px;
-            text-align: center;
-            color: #fff;
+            padding: 120px 20px; text-align: center; color: #fff;
             background: linear-gradient(rgba(10, 77, 162, .85), rgba(0, 210, 255, .7)),
                         url("https://images.unsplash.com/photo-1535223289827-42f1e9919769") center/cover;
-            animation: zoom 20s infinite alternate;
         }
+        .hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 15px; }
 
-        @keyframes zoom { 0% { background-size: 100% } 100% { background-size: 115% } }
-
-        .hero h1 { font-size: 52px; font-weight: 800; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .hero p { font-size: 20px; margin-bottom: 35px; }
-        .btn { background: #fff; color: var(--primary); padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; }
-        .btn:hover { background: var(--primary); color: #fff; transform: translateY(-3px); }
-
-        /* Sections */
-        section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 36px; color: #1e293b; }
-
-        /* Packages (Desktop: 4 columns) */
+        /* Packages Grid - Desktop: 4 Columns */
+        section { padding: 60px 0; }
+        .section-title { text-align: center; margin-bottom: 40px; }
         .packages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .card { background: #fff; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,.05); transition: .3s; border: 1px solid #edf2f7; }
-        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
-        .speed { font-size: 34px; font-weight: 800; color: var(--primary); margin: 10px 0; }
-        .price { font-size: 20px; color: #64748b; margin-bottom: 20px; font-weight: 600; }
-        ul { list-style: none; margin-bottom: 25px; text-align: left; }
-        ul li { margin-bottom: 10px; font-size: 15px; }
-        ul li::before { content: "✔ "; color: #22c55e; font-weight: bold; }
-        .order { display: block; background: var(--primary); color: #fff; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-        .order:hover { background: #083d81; }
+        .card { background: #fff; padding: 25px; border-radius: 20px; text-align: center; border: 1px solid #edf2f7; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .speed { font-size: 28px; font-weight: 800; color: var(--primary); margin: 10px 0; }
+        .price { font-size: 18px; color: #64748b; font-weight: 600; }
+        .card ul { list-style: none; margin: 15px 0; text-align: left; font-size: 14px; }
+        .order { display: block; background: var(--primary); color: #fff; padding: 10px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: 0.3s; }
 
-        /* Coverage */
-        .coverage { background: #eef6ff; text-align: center; }
-        .coverage h3 { color: var(--primary); margin-top: 15px; font-size: 22px; word-spacing: 5px; }
-
-        /* Form */
-        .form { max-width: 500px; margin: auto; background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .form input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd; outline: none; }
-        .form button { width: 100%; padding: 14px; border: none; background: var(--primary); color: #fff; font-weight: 700; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-
-        /* Map */
-        .map-container { border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 5px solid #fff; }
-
-        /* Footer */
-        footer { background: #0f172a; color: #cbd5e1; text-align: center; padding: 50px 0; }
+        /* Map Section */
+        #map { height: 500px; width: 100%; border-radius: 20px; border: 5px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: 20px; }
 
         /* Floating Buttons */
-        .float-btn { position: fixed; right: 20px; color: #fff; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: 0.3s; }
+        .float-btn { position: fixed; right: 20px; color: #fff; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
         .whatsapp { bottom: 20px; background: #25D366; }
         .call { bottom: 80px; background: #0a4da2; }
-        .speedtest { bottom: 140px; background: #ff6b00; }
 
-        /* Responsive Logic */
+        /* Mobile Responsive */
+        @media(max-width:992px) { .packages { grid-template-columns: repeat(2, 1fr); } }
         @media(max-width:768px){
             nav { display: none; }
-            .hero h1 { font-size: 32px; }
-            .hero { padding: 120px 20px; }
-            .packages { grid-template-columns: 1fr; } /* মোবাইলে একটার নিচে একটা */
-            .map-container iframe { height: 300px; }
+            .packages { grid-template-columns: 1fr; }
+            #map { height: 350px; }
+            .hero h1 { font-size: 28px; }
         }
     </style>
 </head>
-
 <body>
 
     <header>
         <div class="container">
             <a href="#" class="logo-box">
-                <img src="Gemini_Generated_Image_khhiu1khhiu1khhi.png" alt="RAJ BROADBAND Logo">
+                <img src="Gemini_Generated_Image_khhiu1khhiu1khhi.png" alt="Logo">
                 <span class="brand-name">RAJ BROADBAND</span>
             </a>
             <nav>
                 <a href="#plans">Packages</a>
-                <a href="#connection">New Connection</a>
-                <a href="#coverage">Coverage</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to <br>RAJ BROADBAND NETWORK</h1>
-            <p>High-Speed Broadband Service in Rangchapra & Gauyariya Area</p>
-            <a href="#plans" class="btn">Explore Plans</a>
-        </div>
-    </section>
-
-    <section id="plans">
-        <div class="container">
-            <div class="section-title"><h2>Internet Packages</h2></div>
-            <div class="packages">
-                <div class="card">
-                    <h3>Venus</h3>
-                    <div class="speed">12 Mbps</div>
-                    <div class="price">৳500 /month</div>
-                    <ul><li>Youtube Unlimited</li><li>FTP Unlimited</li><li>24/7 Support</li></ul>
-                    <a href="https://wa.me/8801918478035" class="order">Order Now</a>
-                </div>
-                <div class="card">
-                    <h3>Mars</h3>
-                    <div class="speed">20 Mbps</div>
-                    <div class="price">৳800 /month</div>
-                    <ul><li>Youtube Unlimited</li><li>FTP Unlimited</li><li>24/7 Support</li></ul>
-                    <a href="https://wa.me/8801918478035" class="order">Order Now</a>
-                </div>
-                <div class="card">
-                    <h3>Mercury</h3>
-                    <div class="speed">30 Mbps</div>
-                    <div class="price">৳1200 /month</div>
-                    <ul><li>Youtube Unlimited</li><li>FTP Unlimited</li><li>24/7 Support</li></ul>
-                    <a href="https://wa.me/8801918478035" class="order">Order Now</a>
-                </div>
-                <div class="card">
-                    <h3>Jupiter</h3>
-                    <div class="speed">50 Mbps</div>
-                    <div class="price">৳2000 /month</div>
-                    <ul><li>Youtube Unlimited</li><li>FTP Unlimited</li><li>24/7 Support</li></ul>
-                    <a href="https://wa.me/8801918478035" class="order">Order Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="connection">
-        <div class="container">
-            <div class="section-title"><h2>New Connection Request</h2></div>
-            <div class="form">
-                <form action="https://formspree.io/f/mvzwovye" method="POST">
-                    <input type="text" name="Name" placeholder="Your Full Name" required>
-                    <input type="text" name="Phone" placeholder="Phone Number" required>
-                    <input type="text" name="Address" placeholder="Full Address" required>
-                    <button type="submit">Submit Request</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section id="coverage" class="coverage">
-        <div class="container">
-            <div class="section-title"><h2>Coverage Area</h2></div>
-            <p>Currently covering the following regions:</p>
-            <h3>Rangchapra • Gauyariya • Nishaiganj • Nandibari</h3>
-        </div>
-    </section>
-
-    <section id="location">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Service Location</h2>
-                <p>📍 Bhaluka, Mymensingh (Rangchapra & Gauyariya Belt)</p>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14532.7483838703!2d90.37!3d24.38!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1713500000000!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <p>📍 Office: Rangchapra, Bhaluka, Mymensingh</p>
-        <p>📞 Helpline: 01918-478035</p>
-        <p style="margin-top: 15px; font-size: 14px;">© 2026 <strong>RAJ BROADBAND NETWORK</strong>. All Rights Reserved.</p>
-    </footer>
-
-    <a class="float-btn speedtest" href="https://fast.com" target="_blank">⚡ Speed Test</a>
-    <a class="float-btn call" href="tel:01918478035">📞 Call</a>
-    <a class="float-btn whatsapp" href="https://wa.me/8801918478035">💬 WhatsApp</a>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAJ NETWORK - High Speed Broadband</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        body { background: #f5f7fb; color: #334155; line-height: 1.6; overflow-x: hidden; }
-        .container { width: 90%; max-width: 1200px; margin: auto; }
-        :root { --primary: #0a4da2; --accent: #00d2ff; }
-
-        /* Header logic */
-        header { background: #fff; box-shadow: 0 4px 15px rgba(0, 0, 0, .08); position: sticky; top: 0; z-index: 1000; }
-        header .container { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
-        
-        .logo-box { display: flex; align-items: center; text-decoration: none; gap: 10px; }
-        .logo-box img { height: 55px; width: auto; }
-        .brand-name { font-size: 24px; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
-
-        nav { display: flex; gap: 20px; }
-        nav a { text-decoration: none; font-weight: 600; color: #475569; transition: 0.3s; font-size: 15px; }
-        nav a:hover { color: var(--primary); }
-
-        /* Hero Section */
-        .hero {
-            padding: 140px 20px;
-            text-align: center;
-            color: #fff;
-            background: linear-gradient(rgba(10, 77, 162, 0.85), rgba(15, 23, 42, 0.9)),
-                        url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070") center/cover;
-            background-attachment: fixed;
-        }
-        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
-        .hero p { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
-        .btn { background: var(--accent); color: #0f172a; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; }
-
-        /* Plans Section (PC View: 4 Columns) */
-        section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .packages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .card { background: #fff; padding: 30px 20px; border-radius: 20px; text-align: center; border: 1px solid #edf2f7; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
-        .speed { font-size: 28px; font-weight: 800; color: var(--primary); margin: 10px 0; }
-        .price { font-size: 18px; color: #64748b; font-weight: 600; margin-bottom: 15px; }
-        .card ul { list-style: none; text-align: left; margin-bottom: 20px; padding-left: 10px; }
-        .card ul li { font-size: 14px; margin-bottom: 5px; }
-        .card ul li::before { content: "✔ "; color: #22c55e; }
-        .order { display: block; background: var(--primary); color: #fff; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 700; }
-
-        /* Coverage Area & Map */
-        .map-container { border-radius: 20px; overflow: hidden; height: 450px; margin-top: 30px; border: 5px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        iframe { width: 100%; height: 100%; border: none; }
-
-        /* Floating Buttons */
-        .float-btn { position: fixed; right: 20px; color: #fff; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .whatsapp { bottom: 20px; background: #25D366; }
-        .call { bottom: 80px; background: #0a4da2; }
-        .speedtest { bottom: 140px; background: #ff6b00; }
-
-        footer { background: #0f172a; color: #cbd5e1; text-align: center; padding: 40px 20px; }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            header .container { flex-direction: column; text-align: center; }
-            nav { margin-top: 15px; gap: 10px; flex-wrap: wrap; justify-content: center; }
-            nav a { font-size: 13px; background: #f1f5f9; padding: 5px 10px; border-radius: 5px; }
-            .hero { padding: 80px 15px; background-attachment: scroll; }
-            .hero h1 { font-size: 28px; }
-            .packages { grid-template-columns: 1fr; } 
-            .map-container { height: 300px; }
-            .float-btn { padding: 10px 15px; font-size: 12px; right: 10px; }
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <div class="container">
-            <a href="#" class="logo-box">
-                <img src="Gemini_Generated_Image_khhiu1khhiu1khhi.png" alt="RAJ NETWORK">
-                <span class="brand-name">RAJ NETWORK</span>
-            </a>
-            <nav>
-                <a href="#plans">Packages</a>
-                <a href="#connection">New Connection</a>
-                <a href="#coverage">Coverage</a>
+                <a href="#coverage">Coverage Map</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -295,81 +76,56 @@
     <section class="hero">
         <div class="container">
             <h1>RAJ BROADBAND NETWORK</h1>
-            <p>High-Speed Fiber Internet in Rangchapra & Gauyariya Area</p>
-            <a href="#plans" class="btn">Explore Plans</a>
+            <p>ভ্যালুকা ও পার্শ্ববর্তী এলাকায় হাই-স্পিড ইন্টারনেট কভারেজ</p>
         </div>
     </section>
 
     <section id="plans">
         <div class="container">
-            <div class="section-title"><h2>Choose Your Plan</h2></div>
+            <div class="section-title"><h2>Internet Packages</h2></div>
             <div class="packages">
-                <div class="card">
-                    <h3>Venus</h3>
-                    <div class="speed">12 Mbps</div>
-                    <div class="price">৳500 /month</div>
-                    <ul><li>Youtube Unlimited</li><li>FTP Unlimited</li><li>24/7 Support</li></ul>
-                    <a href="https://wa.me/8801918478035" class="order">Order Now</a>
-                </div>
-                <div class="card">
-                    <h3>Mars</h3>
-                    <div class="speed">20 Mbps</div>
-                    <div class="price">৳800 /month</div>
-                    <ul><li>Youtube Unlimited</li><li>FTP Unlimited</li><li>24/7 Support</li></ul>
-                    <a href="https://wa.me/8801918478035" class="order">Order Now</a>
-                </div>
-                <div class="card">
-                    <h3>Mercury</h3>
-                    <div class="speed">30 Mbps</div>
-                    <div class="price">৳1200 /month</div>
-                    <ul><li>Youtube Unlimited</li><li>FTP Unlimited</li><li>24/7 Support</li></ul>
-                    <a href="https://wa.me/8801918478035" class="order">Order Now</a>
-                </div>
-                <div class="card">
-                    <h3>Jupiter</h3>
-                    <div class="speed">50 Mbps</div>
-                    <div class="price">৳2000 /month</div>
-                    <ul><li>Youtube Unlimited</li><li>FTP Unlimited</li><li>24/7 Support</li></ul>
-                    <a href="https://wa.me/8801918478035" class="order">Order Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="connection" style="background: #fff;">
-        <div class="container">
-            <div class="section-title"><h2>New Connection Request</h2></div>
-            <div style="max-width: 500px; margin: auto; padding: 25px; background: #f8fafc; border-radius: 20px; border: 1px solid #eee;">
-                <form action="https://formspree.io/f/mvzwovye" method="POST">
-                    <input type="text" name="Name" placeholder="Full Name" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ddd;">
-                    <input type="text" name="Phone" placeholder="Phone Number" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ddd;">
-                    <input type="text" name="Address" placeholder="Full Address" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #ddd;">
-                    <button type="submit" style="width:100%; padding:14px; background:var(--primary); color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer;">Send Request</button>
-                </form>
+                <div class="card"><h3>Venus</h3><div class="speed">12 Mbps</div><div class="price">৳500/mo</div><ul><li>✔ Youtube Unlimited</li><li>✔ FTP Unlimited</li></ul><a href="https://wa.me/8801918478035" class="order">Order</a></div>
+                <div class="card"><h3>Mars</h3><div class="speed">20 Mbps</div><div class="price">৳800/mo</div><ul><li>✔ Youtube Unlimited</li><li>✔ FTP Unlimited</li></ul><a href="https://wa.me/8801918478035" class="order">Order</a></div>
+                <div class="card"><h3>Mercury</h3><div class="speed">30 Mbps</div><div class="price">৳1200/mo</div><ul><li>✔ Youtube Unlimited</li><li>✔ FTP Unlimited</li></ul><a href="https://wa.me/8801918478035" class="order">Order</a></div>
+                <div class="card"><h3>Jupiter</h3><div class="speed">50 Mbps</div><div class="price">৳2000/mo</div><ul><li>✔ Youtube Unlimited</li><li>✔ FTP Unlimited</li></ul><a href="https://wa.me/8801918478035" class="order">Order</a></div>
             </div>
         </div>
     </section>
 
     <section id="coverage" style="background: #eef6ff;">
         <div class="container">
-            <div class="section-title"><h2>Service Coverage Area</h2></div>
-            <p style="text-align:center; margin-bottom: 20px;">📍 <strong>Rangchapra • Gauyariya • Nishaiganj</strong></p>
-            
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14532.7483838703!2d90.37!3d24.38!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1713500000000!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="section-title">
+                <h2>Service Coverage Map</h2>
+                <p>📍 আমাদের সার্ভিস এরিয়া সমুহ: রংচাপড়া • গাওয়ারিয়া • নিসাইগঞ্জ • নন্দীবাড়ী</p>
             </div>
+            <div id="map"></div>
         </div>
     </section>
 
-    <footer id="contact">
+    <footer id="contact" style="background: #0f172a; color: #cbd5e1; text-align: center; padding: 40px;">
         <p>📍 Office: Rangchapra, Bhaluka, Mymensingh</p>
         <p>📞 Helpline: 01918-478035</p>
-        <p style="margin-top: 15px; font-size: 13px;">© 2026 <strong>RAJ NETWORK</strong>. All Rights Reserved.</p>
+        <p style="margin-top: 15px; font-size: 14px;">© 2026 RAJ BROADBAND NETWORK. All Rights Reserved.</p>
     </footer>
 
-    <a class="float-btn speedtest" href="https://fast.com" target="_blank">⚡ Speed</a>
-    <a class="float-btn call" href="tel:01918478035">📞 Call</a>
-    <a class="float-btn whatsapp" href="https://wa.me/8801918478035">💬 Chat</a>
+    <a class="float-btn call" href="tel:01918478035">📞 Call Now</a>
+    <a class="float-btn whatsapp" href="https://wa.me/8801918478035">💬 WhatsApp</a>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([24.3800, 90.4100], 14); 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        var locations = [
+            { name: "রংচাপড়া (Rangchapra)", coords: [24.3750, 90.4050] },
+            { name: "গাওয়ারিয়া (Gauyariya)", coords: [24.3855, 90.4280] },
+            { name: "নিসাইগঞ্জ (Nishaiganj)", coords: [24.3780, 90.4180] },
+            { name: "নন্দীবাড়ী (Nandibari)", coords: [24.3700, 90.3950] }
+        ];
+
+        locations.forEach(function(loc) {
+            L.marker(loc.coords).addTo(map).bindPopup("<b>" + loc.name + "</b><br>সার্ভিস এভেলেবেল।");
+        });
+    </script>
 </body>
 </html>
