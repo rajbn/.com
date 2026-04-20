@@ -9,7 +9,7 @@
     
     <style>
         :root {
-            --main-blue: #0056b3;
+            --main-green: #28a745;
             --dark-blue: #003366;
             --accent-orange: #ff6600;
             --light-bg: #f8f9fa;
@@ -28,12 +28,12 @@
         header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
         .logo-box img { height: 55px; margin-right: 10px; }
-        .brand-name { font-size: 22px; font-weight: 900; color: var(--main-blue); }
+        .brand-name { font-size: 22px; font-weight: 900; color: var(--dark-blue); }
 
         nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 20px; }
         nav ul li a { text-decoration: none; color: #444; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; }
-        nav ul li a:hover { color: var(--main-blue); }
+        nav ul li a:hover { color: var(--main-green); }
 
         /* Hero Section */
         .hero { 
@@ -45,68 +45,56 @@
         .hero-content-box { width: 100%; display: flex; flex-direction: column; align-items: center; }
         .hero h1 { font-size: 45px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase;}
         .hero p { font-size: 18px; margin-bottom: 30px; max-width: 800px;}
-        .btn-order { background: var(--accent-orange); color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
+        .btn-order { background: var(--main-green); color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
 
         /* Section Styling */
         section { padding: 70px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; position: relative; }
-        .section-title h2 { font-size: 32px; color: var(--dark-blue); text-transform: uppercase; }
-        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--accent-orange); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 32px; color: #333; text-transform: uppercase; }
 
-        /* Packages (Grid) */
+        /* Packages (New Green Design) */
         .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .package-card { background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; transition: 0.3s; text-align: center; }
-        .package-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .pkg-header { background: var(--main-blue); color: #fff; padding: 20px; }
-        .pkg-header h3 { font-size: 24px; }
-        .pkg-body { padding: 30px; }
-        .pkg-price { font-size: 28px; font-weight: 900; color: var(--dark-blue); margin-bottom: 15px; }
-        .pkg-features { list-style: none; margin-bottom: 25px; text-align: left; font-size: 14px; }
-        .pkg-features li { padding: 8px 0; border-bottom: 1px dashed #eee; }
-        .pkg-features li i { color: var(--main-blue); margin-right: 10px; }
-        .pkg-btn { display: block; background: var(--dark-blue); color: #fff; padding: 10px; text-decoration: none; border-radius: 4px; font-weight: bold; }
+        .package-card { background: #fff; border-radius: 8px; overflow: hidden; transition: 0.3s; text-align: center; box-shadow: 0 0 15px rgba(0,0,0,0.05); }
+        .pkg-badge { background: var(--main-green); color: #fff; padding: 10px 40px; display: inline-block; position: relative; font-weight: bold; margin-top: 20px; }
+        .pkg-badge::after { content: ''; position: absolute; bottom: -10px; left: 20px; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid var(--main-green); }
+        
+        .pkg-price-box { background: #f4f4f4; padding: 30px 0; margin-top: 20px; color: #333; font-size: 35px; font-weight: 400; border-bottom: 1px solid #eee; }
+        .pkg-price-box small { font-size: 14px; color: #777; }
+        
+        .pkg-features { list-style: none; margin: 0; padding: 20px 0; text-align: center; }
+        .pkg-features li { padding: 15px 0; border-bottom: 1px dotted #ddd; color: #666; font-size: 15px; }
+        .pkg-features li:last-child { border-bottom: none; }
+        
+        .pkg-btn-green { display: inline-block; background: var(--main-green); color: #fff; padding: 10px 35px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-bottom: 30px; transition: 0.3s; }
+        .pkg-btn-green:hover { background: #218838; }
 
         /* Connection Form */
         .connection-section { background: var(--light-bg); }
         .form-box { max-width: 600px; margin: auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .form-box input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; }
-        .form-box button { width: 100%; padding: 15px; background: var(--accent-orange); color: #fff; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        .form-box button { width: 100%; padding: 15px; background: var(--main-green); color: #fff; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
 
         /* Footer */
         footer { background: #111; color: #ccc; padding: 60px 0 20px; font-size: 14px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-col h4 { color: #fff; margin-bottom: 20px; border-left: 3px solid var(--accent-orange); padding-left: 10px; }
-        .footer-col p { line-height: 2; }
+        .footer-col h4 { color: #fff; margin-bottom: 20px; border-left: 3px solid var(--main-green); padding-left: 10px; }
 
         /* Floating Contact */
         .float-contact { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-        .float-contact a { display: block; width: 50px; height: 50px; border-radius: 50%; margin-top: 10px; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .float-contact a { display: flex; width: 50px; height: 50px; border-radius: 50%; margin-top: 10px; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .whatsapp-float { background: #25d366; }
-        .call-float { background: var(--main-blue); }
+        .call-float { background: var(--dark-blue); }
 
-        /* Responsive Mobile Styles */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .menu-toggle { display: block !important; cursor: pointer; }
-            
-            header nav { 
-                display: none; 
-                width: 100%; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                background: #fff; 
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
-                padding: 10px 0;
-            }
-
+            .menu-toggle { display: block !important; cursor: pointer; margin-left: auto; }
+            header nav { display: none; width: 100%; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,0.1); padding: 10px 0; }
             header nav.active { display: block; }
             header nav ul { flex-direction: column; }
             header nav ul li { margin: 0; border-bottom: 1px solid #eee; }
             header nav ul li a { padding: 15px; display: block; text-align: center; }
-
-            .packages-grid { grid-template-columns: 1fr !important; }
             .hero h1 { font-size: 28px !important; }
-            .hero p { font-size: 15px; }
+            .packages-grid { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
@@ -125,7 +113,7 @@
                 <img src="Gemini_Generated_Image_khhiu1khhiu1khhi.png" alt="RAJ LOGO">
                 <span class="brand-name">RAJ NETWORK</span>
             </a>
-            <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')" style="display: none; font-size: 24px; color: var(--main-blue);">
+            <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')" style="display: none; font-size: 24px; color: var(--main-green);">
                 <i class="fa fa-bars"></i>
             </div>
             <nav>
@@ -150,49 +138,50 @@
     <section id="plans">
         <div class="container">
             <div class="section-title">
-                <h2>Our Internet Plans</h2>
+                <h2>OUR <span style="color: var(--main-green); font-weight: 900;">PLAN & PRICING</span></h2>
             </div>
+            
             <div class="packages-grid">
                 <div class="package-card">
-                    <div class="pkg-header"><h3>Venus</h3></div>
-                    <div class="pkg-body">
-                        <div class="pkg-price">12 Mbps</div> 
-                        <ul class="pkg-features">
-                            <li><i class="fa fa-tag"></i> Price: ৳500 /Month</li>
-                            <li><i class="fa fa-check"></i> Unlimited Youtube</li>
-                            <li><i class="fa fa-check"></i> Unlimited FTP Access</li>
-                            <li><i class="fa fa-headset"></i> 24/7 Support</li>
-                        </ul>
-                        <a href="https://wa.me/8801918478035" class="pkg-btn">Order Now</a>
-                    </div>
+                    <div class="pkg-badge">PACKAGE 1</div>
+                    <div class="pkg-price-box">
+                        525 BDT <small>/month</small>
+                    </div> 
+                    <ul class="pkg-features">
+                        <li>Bandwidth 20 Mbps</li>
+                        <li>Youtube Unlimited</li>
+                        <li>FTP Unlimited</li>
+                        <li>Support 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/8801918478035" class="pkg-btn-green">ORDER NOW</a>
                 </div>
 
                 <div class="package-card">
-                    <div class="pkg-header"><h3>Mars</h3></div>
-                    <div class="pkg-body">
-                        <div class="pkg-price">20 Mbps</div>
-                        <ul class="pkg-features">
-                            <li><i class="fa fa-tag"></i> Price: ৳800 /Month</li>
-                            <li><i class="fa fa-check"></i> Unlimited Youtube</li>
-                            <li><i class="fa fa-check"></i> Unlimited FTP Access</li>
-                            <li><i class="fa fa-headset"></i> 24/7 Support</li>
-                        </ul>
-                        <a href="https://wa.me/8801918478035" class="pkg-btn">Order Now</a>
-                    </div>
+                    <div class="pkg-badge">PACKAGE 2</div>
+                    <div class="pkg-price-box">
+                        630 BDT <small>/month</small>
+                    </div> 
+                    <ul class="pkg-features">
+                        <li>Bandwidth 30 Mbps</li>
+                        <li>Youtube Unlimited</li>
+                        <li>FTP Unlimited</li>
+                        <li>Support 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/8801918478035" class="pkg-btn-green">ORDER NOW</a>
                 </div>
 
-                <div class="package-card" style="border: 2px solid var(--accent-orange);">
-                    <div class="pkg-header" style="background: var(--dark-blue);"><h3>Mercury</h3></div>
-                    <div class="pkg-body">
-                        <div class="pkg-price">30 Mbps</div>
-                        <ul class="pkg-features">
-                            <li><i class="fa fa-tag"></i> Price: ৳1200 /Month</li>
-                            <li><i class="fa fa-check"></i> Unlimited Youtube</li>
-                            <li><i class="fa fa-check"></i> Unlimited FTP Access</li>
-                            <li><i class="fa fa-headset"></i> 24/7 Support</li>
-                        </ul>
-                        <a href="https://wa.me/8801918478035" class="pkg-btn">Order Now</a>
-                    </div>
+                <div class="package-card">
+                    <div class="pkg-badge">PACKAGE 3</div>
+                    <div class="pkg-price-box">
+                        840 BDT <small>/month</small>
+                    </div> 
+                    <ul class="pkg-features">
+                        <li>Bandwidth 50 Mbps</li>
+                        <li>Youtube Unlimited</li>
+                        <li>FTP Unlimited</li>
+                        <li>Support 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/8801918478035" class="pkg-btn-green">ORDER NOW</a>
                 </div>
             </div>
         </div>
