@@ -1,6 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAJ BROADBAND NETWORK</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HEADER */
+header{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+}
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-box img{
+    height:50px;
+}
+
+.brand{
+    font-weight:800;
+    font-size:22px;
+}
+
+/* MENU */
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#cbd5e1;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+    padding:120px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#0a4da2,#020617);
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    opacity:.8;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#38bdf8;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    color:#000;
+    font-weight:700;
+}
+
+/* PACKAGES */
+section{
+    padding:70px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.packages{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.speed{
+    font-size:28px;
+    font-weight:800;
+    color:#38bdf8;
+}
+
+.price{
+    margin:10px 0;
+}
+
+.order{
+    display:inline-block;
+    margin-top:15px;
+    background:#0a4da2;
+    padding:10px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    color:#fff;
+}
+
+/* FOOTER */
+footer{
+    background:#020617;
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* FLOAT BTN */
+.float{
+    position:fixed;
+    right:20px;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.call{ bottom:80px; background:#0a4da2; }
+.whatsapp{ bottom:20px; background:#25D366; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .packages{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    nav{ display:none; }
+    .packages{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo-box">
+            <!-- LOGO এখানে বসাও -->
+            <img src="logo.png" alt="Logo">
+            <span class="brand">RAJ BROADBAND</span>
+        </div>
+
+        <nav>
+            <a href="#plans">Packages</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>RAJ BROADBAND NETWORK</h1>
+    <p>Fast • Reliable • Fiber Internet in Your Area</p>
+    <a href="https://wa.me/8801918478035" class="btn">Get Connection</a>
+</section>
+
+<section id="plans">
+    <div class="container">
+        <div class="title"><h2>Our Packages</h2></div>
+
+        <div class="packages">
+
+            <div class="card">
+                <h3>Venus</h3>
+                <div class="speed">12 Mbps</div>
+                <div class="price">500৳</div>
+                <a href="#" class="order">Order</a>
+            </div>
+
+            <div class="card">
+                <h3>Mars</h3>
+                <div class="speed">20 Mbps</div>
+                <div class="price">800৳</div>
+                <a href="#" class="order">Order</a>
+            </div>
+
+            <div class="card">
+                <h3>Mercury</h3>
+                <div class="speed">30 Mbps</div>
+                <div class="price">1200৳</div>
+                <a href="#" class="order">Order</a>
+            </div>
+
+            <div class="card">
+                <h3>Jupiter</h3>
+                <div class="speed">50 Mbps</div>
+                <div class="price">2000৳</div>
+                <a href="#" class="order">Order</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <p>📍 Rangchapra, Bhaluka, Mymensingh</p>
+    <p>📞 01918-478035</p>
+    <p>© 2026 RAJ BROADBAND NETWORK</p>
+</footer>
+
+<a href="tel:01918478035" class="float call">Call</a>
+<a href="https://wa.me/8801918478035" class="float whatsapp">WhatsApp</a>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAJ BROADBAND NETWORK</title>
