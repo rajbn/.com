@@ -36,6 +36,9 @@
         nav ul li a { text-decoration: none; color: #444; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--main-color); }
 
+        /* FTP Menu Item Color - highlighting it slightly */
+        .ftp-menu-link { color: #00796b !important; }
+
         /* Hero Section */
         .hero { 
             background: linear-gradient(rgba(10,25,47,0.85), rgba(0,70,173,0.85)), 
@@ -118,6 +121,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#plans">Packages</a></li>
+                    <li><a href="http://172.16.50.4" class="ftp-menu-link" target="_blank"><i class="fa fa-server"></i> FTP SERVER</a></li>
                     <li><a href="#connection">Order Now</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -133,83 +137,83 @@
         </div>
     </section>
 
-<section id="plans">
-    <div class="container">
-        <div class="section-title">
-            <h2 style="font-weight: 400;">OUR <span style="color: #00796b; font-weight: 700;">PLAN & PRICING</span></h2>
-        </div>
-        
-        <div class="packages-grid" style="margin-top: 40px;">
+    <section id="plans">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="font-weight: 400;">OUR <span style="color: #00796b; font-weight: 700;">PLAN & PRICING</span></h2>
+            </div>
             
-            <div class="package-card" style="border: none; box-shadow: 0 0 15px rgba(0,0,0,0.05); position: relative; border-radius: 0;">
-                <div class="pkg-header" style="background: #00796b; padding: 15px; position: relative;">
-                    <h3 style="font-size: 18px; letter-spacing: 1px; font-weight: 700;">PACKAGE 1</h3>
-                    <div style="position: absolute; bottom: -10px; left: 20px; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid #00796b;"></div>
-                </div>
-                <div class="pkg-body" style="padding: 0;">
-                    <div style="background: #efefef; padding: 30px 10px; border-bottom: 1px solid #ddd;">
-                        <span style="font-size: 40px; font-weight: 400; color: #333;">500 BDT</span>
-                        <span style="font-size: 14px; color: #666;">/month</span>
+            <div class="packages-grid" style="margin-top: 40px;">
+                
+                <div class="package-card" style="border: none; box-shadow: 0 0 15px rgba(0,0,0,0.05); position: relative; border-radius: 0;">
+                    <div class="pkg-header" style="background: #00796b; padding: 15px; position: relative;">
+                        <h3 style="font-size: 18px; letter-spacing: 1px; font-weight: 700;">PACKAGE 1</h3>
+                        <div style="position: absolute; bottom: -10px; left: 20px; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid #00796b;"></div>
                     </div>
-                    <ul class="pkg-features" style="text-align: center; padding: 0;">
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Bandwith 12 Mbps</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Youtube Unlimited</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">FTP Unlimited</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Support 24/7</li>
-                    </ul>
-                    <div style="padding: 20px;">
-                        <a href="https://wa.me/8801918478035?text=Order%20Package%201%20(20Mbps)" class="pkg-btn" style="background: #00796b; border-radius: 5px; font-weight: 700;">ORDER NOW</a>
+                    <div class="pkg-body" style="padding: 0;">
+                        <div style="background: #efefef; padding: 30px 10px; border-bottom: 1px solid #ddd;">
+                            <span style="font-size: 40px; font-weight: 400; color: #333;">500 BDT</span>
+                            <span style="font-size: 14px; color: #666;">/month</span>
+                        </div>
+                        <ul class="pkg-features" style="text-align: center; padding: 0;">
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Bandwith 12 Mbps</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Youtube Unlimited</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">FTP Unlimited</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Support 24/7</li>
+                        </ul>
+                        <div style="padding: 20px;">
+                            <a href="https://wa.me/8801918478035?text=Order%20Package%201%20(20Mbps)" class="pkg-btn" style="background: #00796b; border-radius: 5px; font-weight: 700;">ORDER NOW</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="package-card featured-pkg" style="border: 2px solid #00796b; box-shadow: 0 0 15px rgba(0,0,0,0.1); position: relative; border-radius: 0;">
-                <div class="pkg-header" style="background: #00796b; padding: 15px; position: relative;">
-                    <h3 style="font-size: 18px; letter-spacing: 1px; font-weight: 700;">PACKAGE 2</h3>
-                    <div style="position: absolute; bottom: -10px; left: 20px; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid #00796b;"></div>
-                </div>
-                <div class="pkg-body" style="padding: 0;">
-                    <div style="background: #efefef; padding: 30px 10px; border-bottom: 1px solid #ddd;">
-                        <span style="font-size: 40px; font-weight: 400; color: #333;">800 BDT</span>
-                        <span style="font-size: 14px; color: #666;">/month</span>
+                <div class="package-card featured-pkg" style="border: 2px solid #00796b; box-shadow: 0 0 15px rgba(0,0,0,0.1); position: relative; border-radius: 0;">
+                    <div class="pkg-header" style="background: #00796b; padding: 15px; position: relative;">
+                        <h3 style="font-size: 18px; letter-spacing: 1px; font-weight: 700;">PACKAGE 2</h3>
+                        <div style="position: absolute; bottom: -10px; left: 20px; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid #00796b;"></div>
                     </div>
-                    <ul class="pkg-features" style="text-align: center; padding: 0;">
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Bandwith 20 Mbps</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Youtube Unlimited</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">FTP Unlimited</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Support 24/7</li>
-                    </ul>
-                    <div style="padding: 20px;">
-                        <a href="https://wa.me/8801918478035?text=Order%20Package%202%20(30Mbps)" class="pkg-btn" style="background: #00796b; border-radius: 5px; font-weight: 700;">ORDER NOW</a>
+                    <div class="pkg-body" style="padding: 0;">
+                        <div style="background: #efefef; padding: 30px 10px; border-bottom: 1px solid #ddd;">
+                            <span style="font-size: 40px; font-weight: 400; color: #333;">800 BDT</span>
+                            <span style="font-size: 14px; color: #666;">/month</span>
+                        </div>
+                        <ul class="pkg-features" style="text-align: center; padding: 0;">
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Bandwith 20 Mbps</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Youtube Unlimited</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">FTP Unlimited</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Support 24/7</li>
+                        </ul>
+                        <div style="padding: 20px;">
+                            <a href="https://wa.me/8801918478035?text=Order%20Package%202%20(30Mbps)" class="pkg-btn" style="background: #00796b; border-radius: 5px; font-weight: 700;">ORDER NOW</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="package-card" style="border: none; box-shadow: 0 0 15px rgba(0,0,0,0.05); position: relative; border-radius: 0;">
-                <div class="pkg-header" style="background: #00796b; padding: 15px; position: relative;">
-                    <h3 style="font-size: 18px; letter-spacing: 1px; font-weight: 700;">PACKAGE 3</h3>
-                    <div style="position: absolute; bottom: -10px; left: 20px; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid #00796b;"></div>
-                </div>
-                <div class="pkg-body" style="padding: 0;">
-                    <div style="background: #efefef; padding: 30px 10px; border-bottom: 1px solid #ddd;">
-                        <span style="font-size: 40px; font-weight: 400; color: #333;">1200 BDT</span>
-                        <span style="font-size: 14px; color: #666;">/month</span>
+                <div class="package-card" style="border: none; box-shadow: 0 0 15px rgba(0,0,0,0.05); position: relative; border-radius: 0;">
+                    <div class="pkg-header" style="background: #00796b; padding: 15px; position: relative;">
+                        <h3 style="font-size: 18px; letter-spacing: 1px; font-weight: 700;">PACKAGE 3</h3>
+                        <div style="position: absolute; bottom: -10px; left: 20px; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid #00796b;"></div>
                     </div>
-                    <ul class="pkg-features" style="text-align: center; padding: 0;">
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Bandwith 40 Mbps</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Youtube Unlimited</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">FTP Unlimited</li>
-                        <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Support 24/7</li>
-                    </ul>
-                    <div style="padding: 20px;">
-                        <a href="https://wa.me/8801918478035?text=Order%20Package%203%20(50Mbps)" class="pkg-btn" style="background: #00796b; border-radius: 5px; font-weight: 700;">ORDER NOW</a>
+                    <div class="pkg-body" style="padding: 0;">
+                        <div style="background: #efefef; padding: 30px 10px; border-bottom: 1px solid #ddd;">
+                            <span style="font-size: 40px; font-weight: 400; color: #333;">1200 BDT</span>
+                            <span style="font-size: 14px; color: #666;">/month</span>
+                        </div>
+                        <ul class="pkg-features" style="text-align: center; padding: 0;">
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Bandwith 40 Mbps</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Youtube Unlimited</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">FTP Unlimited</li>
+                            <li style="border-bottom: 1px dotted #ccc; padding: 15px; font-size: 14px; color: #666; font-weight: 500;">Support 24/7</li>
+                        </ul>
+                        <div style="padding: 20px;">
+                            <a href="https://wa.me/8801918478035?text=Order%20Package%203%20(50Mbps)" class="pkg-btn" style="background: #00796b; border-radius: 5px; font-weight: 700;">ORDER NOW</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="connection" class="connection-section">
         <div class="container">
