@@ -97,6 +97,34 @@
         .call-float { background: var(--main-blue); }
 
         @media (max-width: 768px) {
+            /* মেনু বাটনটি মোবাইলে দেখাবে */
+            .menu-toggle { display: block !important; margin-left: auto; }
+
+            /* মেনু ডিজাইন - মোবাইলে শুরুতে লুকানো থাকবে */
+            header nav { 
+                display: none; 
+                width: 100%; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                background: #fff; 
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
+                padding: 10px 0;
+            }
+
+            /* বাটন টিপলে মেনু দেখাবে */
+            header nav.active { display: block; }
+
+            header nav ul { flex-direction: column; }
+            header nav ul li { margin: 0; border-bottom: 1px solid #eee; }
+            header nav ul li a { padding: 15px; display: block; text-align: center; }
+
+            /* প্যাকেজগুলো একটার নিচে একটা আসার জন্য */
+            .packages-grid { grid-template-columns: 1fr !important; }
+            
+            .hero h1 { font-size: 28px !important; }
+            .hero p { font-size: 15px; }
+        } {
             header nav { display: none; }
             .hero h1 { font-size: 30px; }
             .hero p {font-size: 16px;}
