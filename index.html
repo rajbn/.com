@@ -3,6 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAJ BROADBAND NETWORK - Best ISP </title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --main-blue: #0056b3;
+            --dark-blue: #003366;
+            --accent-orange: #ff6600;
+            --light-bg: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background-color: #fff; color: #333; overflow-x: hidden; }
+        .container { width: 90%; max-width: 1200px; margin: auto; }
+
+        .top-bar { background: var(--dark-blue); color: #fff; padding: 8px 0; font-size: 13px; }
+        .top-bar .container { display: flex; justify-content: space-between; }
+
+        header { background: #fff; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-box { display: flex; align-items: center; text-decoration: none; }
+        .logo-box img { height: 55px; margin-right: 10px; }
+        .brand-name { font-size: 22px; font-weight: 900; color: var(--main-blue); }
+
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin-left: 20px; position: relative; }
+        nav ul li a { text-decoration: none; color: #444; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; }
+        
+        .dropdown-content {
+            display: none; position: absolute; background-color: #fff; min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1); z-index: 1; top: 100%; border-top: 3px solid var(--accent-orange);
+        }
+        .dropdown-content a { color: #333; padding: 12px 16px; text-decoration: none; display: block; font-size: 13px; text-transform: none; border-bottom: 1px solid #eee; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .menu-toggle { display: none; font-size: 24px; color: var(--main-blue); cursor: pointer; }
+
+        .hero { 
+            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,86,179,0.85)), 
+                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070') center/cover;
+            height: 500px; display: flex; align-items: center; color: #fff; text-align: center; 
+        }
+        .hero-content-box { width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .hero h1 { font-size: 45px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase;}
+        .hero p { font-size: 18px; margin-bottom: 30px; max-width: 800px;}
+        .btn-order { background: var(--accent-orange); color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
+
+        /* --- Plan Section Styles --- */
+        section { padding: 70px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; position: relative; }
+        .section-title h2 { font-size: 28px; color: var(--dark-blue); text-transform: uppercase; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--accent-orange); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .package-card { background: #fff; border: 1px solid #ddd; border-radius: 5px; overflow: hidden; text-align: center; padding-bottom: 20px; }
+        .pkg-header { background: var(--main-blue); color: #fff; padding: 10px; }
+        .pkg-header h3 { font-size: 16px; text-transform: uppercase; }
+        .pkg-body { padding: 15px; }
+        .pkg-speed { font-size: 32px; font-weight: 900; color: var(--dark-blue); margin-bottom: 5px; }
+        .pkg-speed span { font-size: 16px; font-weight: 700; }
+        .pkg-price-small { font-size: 16px; font-weight: 600; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .pkg-features { list-style: none; margin-bottom: 20px; font-size: 13px; color: #444; line-height: 1.8; }
+        .pkg-btn { display: inline-block; background: var(--dark-blue); color: #fff; padding: 8px 20px; text-decoration: none; border-radius: 3px; font-size: 13px; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .top-bar { display: none; }
+            nav { position: absolute; top: 100%; left: 0; width: 100%; background: #fff; display: none; flex-direction: column; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            nav.active { display: flex; }
+            nav ul { flex-direction: column; width: 100%; }
+            nav ul li { margin: 0; width: 100%; border-bottom: 1px solid #eee; }
+            nav ul li a { display: block; padding: 15px; text-align: center; }
+            .dropdown-content { position: static; width: 100%; box-shadow: none; background: #f9f9f9; }
+            .hero h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fa fa-phone"></i> +8801918-478035</span>
+            <span><i class="fa fa-envelope"></i> info@rajbroadband.com</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo-box">
+                <img src="Gemini_Generated_Image_khhiu1khhiu1khhi.jpg" alt="RAJ LOGO">
+                <span class="brand-name">RAJ NETWORK</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu"><i class="fa fa-bars"></i></div>
+            <nav id="nav-list">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#plans">Packages</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Servers <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fa fa-folder-open"></i> FTP Server</a>
+                            <a href="#"><i class="fa fa-tv"></i> Live TV</a>
+                            <a href="#"><i class="fa fa-globe"></i> BDIX Server</a>
+                        </div>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content-box">
+            <h1>WELCOME TO<br>RAJ BROADBAND NETWORK</h1>
+            <p>Reliable Broadband Service in Rangcapra, Amtol & Gauyariya Areas.</p>
+            <a href="#plans" class="btn-order">View Our Plans</a>
+        </div>
+    </section>
+
+    <section id="plans">
+        <div class="container">
+            <div class="section-title"><h2>Our Plan & Pricing</h2></div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="pkg-header"><h3>Venus</h3></div>
+                    <div class="pkg-body">
+                        <div class="pkg-speed">12 <span>Mbps</span></div>
+                        <div class="pkg-price-small">Price: 500 BDT</div>
+                        <ul class="pkg-features">
+                            <li>Youtube & FTP Unlimited</li>
+                            <li>Real IP Available</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <a href="https://wa.me/8801918478035?text=Order%20Venus%2012Mbps" class="pkg-btn" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="pkg-header"><h3>Mars</h3></div>
+                    <div class="pkg-body">
+                        <div class="pkg-speed">20 <span>Mbps</span></div>
+                        <div class="pkg-price-small">Price: 800 BDT</div>
+                        <ul class="pkg-features">
+                            <li>Youtube & FTP Unlimited</li>
+                            <li>Real IP Available</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <a href="https://wa.me/8801918478035?text=Order%20Mars%2020Mbps" class="pkg-btn" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="package-card" style="border: 2px solid var(--accent-orange);">
+                    <div class="pkg-header" style="background: var(--dark-blue);"><h3>Mercury</h3></div>
+                    <div class="pkg-body">
+                        <div class="pkg-speed">30 <span>Mbps</span></div>
+                        <div class="pkg-price-small">Price: 1200 BDT</div>
+                        <ul class="pkg-features">
+                            <li>Youtube & FTP Unlimited</li>
+                            <li>Real IP Available</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <a href="https://wa.me/8801918478035?text=Order%20Mercury%2030Mbps" class="pkg-btn" target="_blank">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p style="text-align: center; color: #fff;">&copy; 2026 RAJ BROADBAND NETWORK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="float-contact">
+        <a href="tel:01918478035" class="call-float"><i class="fa fa-phone"></i></a>
+        <a href="https://wa.me/8801918478035" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAJ BROADBAND NETWORK - Best ISP in Rangcapra and Gauyariya</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
