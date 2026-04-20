@@ -9,9 +9,10 @@
     
     <style>
         :root {
-            --main-blue: #0056b3;
-            --dark-blue: #003366;
-            --accent-orange: #ff6600;
+            /* ইউনিক কালার সেট: রয়্যাল ব্লু এবং অরেঞ্জ */
+            --main-color: #0046ad; 
+            --dark-bg: #0a192f;
+            --accent-color: #ff7b00; 
             --light-bg: #f8f9fa;
         }
 
@@ -20,7 +21,7 @@
         .container { width: 90%; max-width: 1200px; margin: auto; }
 
         /* Top Bar */
-        .top-bar { background: var(--dark-blue); color: #fff; padding: 8px 0; font-size: 13px; }
+        .top-bar { background: var(--dark-bg); color: #fff; padding: 8px 0; font-size: 13px; }
         .top-bar .container { display: flex; justify-content: space-between; }
 
         /* Header */
@@ -28,16 +29,16 @@
         header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
         .logo-box img { height: 55px; margin-right: 10px; }
-        .brand-name { font-size: 22px; font-weight: 900; color: var(--main-blue); }
+        .brand-name { font-size: 22px; font-weight: 900; color: var(--main-color); }
 
         nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 20px; }
         nav ul li a { text-decoration: none; color: #444; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; }
-        nav ul li a:hover { color: var(--main-blue); }
+        nav ul li a:hover { color: var(--main-color); }
 
         /* Hero Section */
         .hero { 
-            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,86,179,0.85)), 
+            background: linear-gradient(rgba(10,25,47,0.85), rgba(0,70,173,0.85)), 
                         url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070') center/cover;
             height: 500px; display: flex; align-items: center; color: #fff; 
             text-align: center; 
@@ -45,68 +46,53 @@
         .hero-content-box { width: 100%; display: flex; flex-direction: column; align-items: center; }
         .hero h1 { font-size: 45px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase;}
         .hero p { font-size: 18px; margin-bottom: 30px; max-width: 800px;}
-        .btn-order { background: var(--accent-orange); color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
+        .btn-order { background: var(--accent-color); color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
 
         /* Section Styling */
         section { padding: 70px 0; }
         .section-title { text-align: center; margin-bottom: 50px; position: relative; }
-        .section-title h2 { font-size: 32px; color: var(--dark-blue); text-transform: uppercase; }
-        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--accent-orange); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .section-title h2 { font-size: 32px; color: var(--dark-bg); text-transform: uppercase; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--accent-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
-        /* Packages (Grid) */
+        /* Packages */
         .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .package-card { background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; transition: 0.3s; text-align: center; }
         .package-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .pkg-header { background: var(--main-blue); color: #fff; padding: 20px; }
+        .pkg-header { background: var(--main-color); color: #fff; padding: 20px; }
         .pkg-header h3 { font-size: 24px; }
         .pkg-body { padding: 30px; }
-        .pkg-price { font-size: 28px; font-weight: 900; color: var(--dark-blue); margin-bottom: 15px; }
+        .pkg-price { font-size: 28px; font-weight: 900; color: var(--dark-bg); margin-bottom: 15px; }
         .pkg-features { list-style: none; margin-bottom: 25px; text-align: left; font-size: 14px; }
         .pkg-features li { padding: 8px 0; border-bottom: 1px dashed #eee; }
-        .pkg-features li i { color: var(--main-blue); margin-right: 10px; }
-        .pkg-btn { display: block; background: var(--dark-blue); color: #fff; padding: 10px; text-decoration: none; border-radius: 4px; font-weight: bold; }
+        .pkg-features li i { color: var(--main-color); margin-right: 10px; }
+        .pkg-btn { display: block; background: var(--accent-color); color: #fff; padding: 10px; text-decoration: none; border-radius: 4px; font-weight: bold; }
 
-        /* Connection Form */
+        /* Form */
         .connection-section { background: var(--light-bg); }
         .form-box { max-width: 600px; margin: auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .form-box input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; }
-        .form-box button { width: 100%; padding: 15px; background: var(--accent-orange); color: #fff; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        .form-box button { width: 100%; padding: 15px; background: var(--accent-color); color: #fff; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
 
         /* Footer */
         footer { background: #111; color: #ccc; padding: 60px 0 20px; font-size: 14px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-col h4 { color: #fff; margin-bottom: 20px; border-left: 3px solid var(--accent-orange); padding-left: 10px; }
-        .footer-col p { line-height: 2; }
+        .footer-col h4 { color: #fff; margin-bottom: 20px; border-left: 3px solid var(--accent-color); padding-left: 10px; }
 
         /* Floating Contact */
         .float-contact { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
         .float-contact a { display: block; width: 50px; height: 50px; border-radius: 50%; margin-top: 10px; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .whatsapp-float { background: #25d366; }
-        .call-float { background: var(--main-blue); }
+        .call-float { background: var(--main-color); }
 
-        /* Responsive Mobile Styles */
+        /* Mobile */
         @media (max-width: 768px) {
             .menu-toggle { display: block !important; cursor: pointer; }
-            
-            header nav { 
-                display: none; 
-                width: 100%; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                background: #fff; 
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
-                padding: 10px 0;
-            }
-
+            header nav { display: none; width: 100%; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,0.1); padding: 10px 0; }
             header nav.active { display: block; }
             header nav ul { flex-direction: column; }
             header nav ul li { margin: 0; border-bottom: 1px solid #eee; }
             header nav ul li a { padding: 15px; display: block; text-align: center; }
-
             .packages-grid { grid-template-columns: 1fr !important; }
-            .hero h1 { font-size: 28px !important; }
-            .hero p { font-size: 15px; }
         }
     </style>
 </head>
@@ -125,7 +111,7 @@
                 <img src="Gemini_Generated_Image_khhiu1khhiu1khhi.png" alt="RAJ LOGO">
                 <span class="brand-name">RAJ NETWORK</span>
             </a>
-            <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')" style="display: none; font-size: 24px; color: var(--main-blue);">
+            <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')" style="display: none; font-size: 24px; color: var(--main-color);">
                 <i class="fa fa-bars"></i>
             </div>
             <nav>
@@ -181,8 +167,8 @@
                     </div>
                 </div>
 
-                <div class="package-card" style="border: 2px solid var(--accent-orange);">
-                    <div class="pkg-header" style="background: var(--dark-blue);"><h3>Mercury</h3></div>
+                <div class="package-card">
+                    <div class="pkg-header"><h3>Mercury</h3></div>
                     <div class="pkg-body">
                         <div class="pkg-price">30 Mbps</div>
                         <ul class="pkg-features">
@@ -240,6 +226,17 @@
         <a href="tel:01918478035" class="call-float"><i class="fa fa-phone"></i></a>
         <a href="https://wa.me/8801918478035" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
     </div>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('nav');
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
